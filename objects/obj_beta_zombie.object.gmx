@@ -39,10 +39,10 @@ aggro_state = aggro_states.idle;
 patrol_dist = p_dist.d_mid;
 
 //state variables
-patrol_speed = 2;
+patrol_speed = 1;
 patrol_dist_max = 20;
-patrol_dist_min = -patrol_dist_max;
-patrol_dist_mid = patrol_dist_max/2;
+patrol_dist_min = -20;
+patrol_dist_mid = 0;
 cur_patrol_dist = 0;
 
 </string>
@@ -73,18 +73,26 @@ switch (aggro_state)
 {
     case aggro_states.idle:
     {
-        hsp = 0;
-        /*script_execute(scr_patrol_timer)*/ //Need to fix this script
-    if (distance_to_object(Alsius) &lt; 200) aggro_state = aggro_states.chase;
+        // hsp = 0;
+        script_execute(scr_patrol_timer) //Need to fix this script
+        if (distance_to_object(Alsius) &lt; 200) 
+        {
+            aggro_state = aggro_states.chase;
+        }
+        break;
     }
-    break;
+    /*
     case aggro_states.chase:
     {
         dir = sign(Alsius.x - x);
         hsp = dir * 2;
-        if (distance_to_object(Alsius) &lt; 300) aggro_state = aggro_states.idle
+        if (distance_to_object(Alsius) &lt; 300) 
+        {
+            aggro_state = aggro_states.idle
+        }  
+        break;
     }
-    break;
+    */
 }
 
 x += ( hsp + move_all )
