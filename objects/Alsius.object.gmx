@@ -76,21 +76,24 @@ key_left = -keyboard_check(vk_left);
 //React to inputs
 move = key_left + key_right;
 
-if keyboard_check(vk_lshift){
-hsp = move * (movespeed+bg_mvmt) * run_spd;
-} else {
-hsp = move * (movespeed+bg_mvmt);
+if (keyboard_check(vk_lshift)) 
+{
+    hsp = move * (movespeed + bg_mvmt) * run_spd;
+} 
+else 
+{
+    hsp = move * (movespeed + bg_mvmt);
 }
 
 //Horiz Collision
-if (place_meeting(x+hsp,y,obj_wall_objects))
+if (place_meeting(x + hsp, y, obj_wall_objects))
 {
-    while(!place_meeting(x+sign(hsp),y,obj_wall_objects))
+    while(!place_meeting(x + sign(hsp), y, obj_wall_objects))
     {
-        x+=sign(hsp);        
-        }
-        hsp=0;
-        }
+        x += sign(hsp);        
+    }
+    hsp=0;
+}
 x += hsp;
 
 //Tell the background when to move
@@ -118,49 +121,50 @@ player_mov = hsp
             <string>///Sprite Control
 
 //When Running
-if keyboard_check(vk_lshift){
+if keyboard_check(vk_lshift)
+{
     if ( hsp &gt;= movespeed ) 
-        {
+    {
         sprite_index = spr_run_right;
-        } 
+    } 
     else if ( hsp &lt;= -movespeed )
-        {
+    {
         sprite_index = spr_run_left;
-        } 
+    } 
     else if ( hsp = 0 )
-        {
+    {
         if ( move = 1 )
-            {
+        {
             sprite_index = spr_idle_right;
-            }
-        else if ( move = -1 )
-            {
-            sprite_index = spr_idle_left;
-            }
         }
+        else if ( move = -1 )
+        {
+            sprite_index = spr_idle_left;
+        }
+    }
 }
 
 
 //When Walking
-    if ( hsp &gt; 0 ) 
-        {
-        sprite_index = spr_walk_right;
-        } 
-    else if ( hsp &lt; 0 )
-        {
-        sprite_index = spr_walk_left;
-        } 
-    else if ( hsp = 0 )
-        {
-        if ( move = 1 )
-            {
-            sprite_index = spr_idle_right;
-            }
-        else if ( move = -1 )
-            {
-            sprite_index = spr_idle_left;
-            }
-        }
+if ( hsp &gt; 0 ) 
+{
+    sprite_index = spr_walk_right;
+} 
+else if ( hsp &lt; 0 )
+{
+    sprite_index = spr_walk_left;
+} 
+else if ( hsp = 0 )
+{
+    if ( move = 1 )
+    {
+        sprite_index = spr_idle_right;
+    }
+    else if ( move = -1 )
+    {
+        sprite_index = spr_idle_left;
+    }
+}
         
 //Upon Key Release
 if keyboard_check_released(vk_right)
@@ -174,11 +178,13 @@ if keyboard_check_released(vk_left)
 }
 
 //Mashke
-if keyboard_check(vk_right) {
-    if keyboard_check(vk_left){
-    sprite_index = spr_idle_right;
+if keyboard_check(vk_right) 
+{
+    if keyboard_check(vk_left)
+    {
+        sprite_index = spr_idle_right;
     }
-    }
+}
 </string>
           </argument>
         </arguments>
