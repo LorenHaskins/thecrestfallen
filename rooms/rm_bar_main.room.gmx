@@ -58,7 +58,7 @@
     <instance objName="obj_wall_objects" x="1600" y="0" name="inst_1A4ED3BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_objects" x="0" y="0" name="inst_0266B307" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chandelier" x="480" y="-192" name="inst_D2F26B6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_beta_zombie" x="700" y="275" name="inst_B507BA4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_beta_zombie" x="1120" y="256" name="inst_B507BA4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

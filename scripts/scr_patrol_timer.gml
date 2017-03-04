@@ -4,9 +4,9 @@ switch (patrol_dist)
 {
     case p_dist.d_mid:
     {
-        cur_patrol_dist += (hsp + move_all);
         dir = 1;
-        hsp = dir * patrol_speed;
+        hsp = (dir * patrol_speed);
+        cur_patrol_dist += (hsp);       
         if (cur_patrol_dist >= patrol_dist_max)
         {
             patrol_dist = p_dist.d_max
@@ -15,9 +15,9 @@ switch (patrol_dist)
     }
     case p_dist.d_max:
     {
-        cur_patrol_dist += (hsp + move_all);
         dir = (-1);
-        hsp = dir * patrol_speed;
+        hsp = (dir * patrol_speed);
+        cur_patrol_dist += (hsp);        
         if (cur_patrol_dist <= patrol_dist_min) 
         {
             patrol_dist = p_dist.d_min
@@ -26,12 +26,12 @@ switch (patrol_dist)
     }
     case p_dist.d_min:
     {
-        cur_patrol_dist += (hsp + move_all);
         dir = 1;
-        hsp = dir * patrol_speed;
-        if (cur_patrol_dist == patrol_dist_mid)
+        hsp = (dir * patrol_speed);
+        cur_patrol_dist += (hsp);
+        if (cur_patrol_dist >= patrol_dist_max)
         {
-            patrol_dist = p_dist.d_mid
+            patrol_dist = p_dist.d_max
         }
     }
 }

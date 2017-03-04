@@ -35,15 +35,16 @@ vsp = 0;
 depth = -1101;
 
 //states
-aggro_state = aggro_states.idle;
+aggro_state = aggro_states.patrol;
 patrol_dist = p_dist.d_mid;
 
 //state variables
 patrol_speed = 1;
-patrol_dist_max = 20;
-patrol_dist_min = -20;
+patrol_dist_max = 200;
+patrol_dist_min = -patrol_dist_max;
 patrol_dist_mid = 0;
 cur_patrol_dist = 0;
+chase_speed = 2;
 
 </string>
           </argument>
@@ -71,9 +72,8 @@ cur_patrol_dist = 0;
 //Zombie Aggro
 switch (aggro_state)
 {
-    case aggro_states.idle:
+    case aggro_states.patrol:
     {
-        // hsp = 0;
         script_execute(scr_patrol_timer) //Need to fix this script
         if (distance_to_object(Alsius) &lt; 200) 
         {
@@ -81,18 +81,17 @@ switch (aggro_state)
         }
         break;
     }
-    /*
     case aggro_states.chase:
     {
         dir = sign(Alsius.x - x);
-        hsp = dir * 2;
-        if (distance_to_object(Alsius) &lt; 300) 
+        hsp = dir * chase_speed;
+        if (distance_to_object(Alsius) &gt; 300) 
         {
-            aggro_state = aggro_states.idle
+            aggro_state = aggro_states.patrol
         }  
         break;
     }
-    */
+
 }
 
 x += ( hsp + move_all )
