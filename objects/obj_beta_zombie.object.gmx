@@ -68,14 +68,15 @@ chase_speed = 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Aggro states of the enemy. *MUST BE MADE FOR EACH PLAYABLE CHARACTER, AND EACH ENEMY TYPE*
+            <string>///Aggro States
+//*CURRENTLY MUST BE MADE FOR EACH PLAYABLE CHARACTER, AND EACH ENEMY TYPE*
 //Zombie Aggro
 switch (aggro_state)
 {
     case aggro_states.patrol:
     {
-        script_execute(scr_patrol_timer) //Need to fix this script
-        if (distance_to_object(Alsius) &lt; 200) 
+        script_execute(scr_patrol_timer)
+        if (distance_to_object(obj_player) &lt; 200) 
         {
             aggro_state = aggro_states.chase;
         }
@@ -83,15 +84,24 @@ switch (aggro_state)
     }
     case aggro_states.chase:
     {
-        dir = sign(Alsius.x - x);
+        dir = sign(obj_player.x - x);
         hsp = dir * chase_speed;
-        if (distance_to_object(Alsius) &gt; 300) 
+        if (distance_to_object(obj_player) &gt; 300) 
         {
             aggro_state = aggro_states.patrol
         }  
         break;
     }
 
+}
+
+if (place_meeting(x + hsp, y, obj_wall_objects))
+{
+    while(!place_meeting(x + sign(hsp), y, obj_wall_objects))
+    {
+        x += sign(hsp);        
+    }
+    hsp=0;
 }
 
 x += ( hsp + move_all )

@@ -3,6 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="1" name="datafiles"/>
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
@@ -22,7 +23,6 @@
         </sprites>
       </sprites>
     </sprites>
-    <sprite>sprites\spr_wall</sprite>
     <sprites name="Background Assets">
       <sprite>sprites\spr_chandelier</sprite>
     </sprites>
@@ -32,6 +32,38 @@
     <sprites name="Beta Sprites">
       <sprites name="Zombie Man">
         <sprite>sprites\spr_beta_zombie</sprite>
+      </sprites>
+      <sprites name="Beta_Alsius_Battle">
+        <sprite>sprites\spr_al_battle_gun_atk</sprite>
+        <sprite>sprites\spr_al_battle_sword_atk</sprite>
+        <sprite>sprites\spr_al_battle_idle</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="Tools">
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_initialize</sprite>
+      <sprite>sprites\spr_rescue_button</sprite>
+    </sprites>
+    <sprites name="UI">
+      <sprites name="Battle GUI">
+        <sprites name="Timer Icons">
+          <sprites name="Playing Characters">
+            <sprite>sprites\spr_battle_icon_alsius</sprite>
+          </sprites>
+          <sprites name="Enemies">
+            <sprite>sprites\spr_battle_icon_beta_zombie</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Universal">
+          <sprite>sprites\spr_battle_button_defend</sprite>
+          <sprite>sprites\spr_battle_button_item</sprite>
+          <sprite>sprites\spr_battle_button_run</sprite>
+          <sprite>sprites\spr_battle_button_shoot</sprite>
+          <sprite>sprites\spr_battle_button_slash</sprite>
+          <sprite>sprites\spr_battle_gui</sprite>
+          <sprite>sprites\spr_battle_timer</sprite>
+          <sprite>sprites\spr_battle_timer_wall</sprite>
+        </sprites>
       </sprites>
     </sprites>
   </sprites>
@@ -45,6 +77,11 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_patrol_timer.gml</script>
+    <script>scripts\Variable_Descriptions.gml</script>
+    <script>scripts\horizontal_collision_prevention.gml</script>
+    <scripts name="Enemy Collision">
+      <script>scripts\scr_en_beta_zombie.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Buttons">
@@ -57,17 +94,53 @@
         </objects>
       </objects>
     </objects>
-    <object>objects\obj_wall</object>
-    <object>objects\obj_wall_objects</object>
     <objects name="Playable Characters">
-      <object>objects\Alsius</object>
+      <objects name="Open World Characters">
+        <object>objects\owc_alsius</object>
+      </objects>
     </objects>
     <objects name="Beta Test Objects">
       <object>objects\obj_chandelier</object>
       <object>objects\obj_beta_zombie</object>
+      <object>objects\obj_beta_battle_zombie</object>
+      <object>objects\obj_battle_alsius</object>
+      <object>objects\alsius_stats</object>
     </objects>
     <objects name="Splash">
       <object>objects\obj_book_cover</object>
+    </objects>
+    <objects name="Tools">
+      <object>objects\init_start_game</object>
+      <object>objects\obj_wall_objects</object>
+      <object>objects\obj_wall</object>
+      <object>objects\obj_rescue_button</object>
+    </objects>
+    <objects name="UI">
+      <objects name="Battle Gui">
+        <objects name="Timer Icons">
+          <objects name="Playing Characters">
+            <object>objects\obj_battle_icon_alsius</object>
+          </objects>
+          <objects name="Enemies">
+            <object>objects\obj_battle_icon_beta_zombie</object>
+          </objects>
+        </objects>
+        <objects name="Battle Menu GUIs">
+          <objects name="Alsius">
+            <object>objects\obj_battle_gui_al</object>
+            <object>objects\obj_bm_defend_al</object>
+            <object>objects\obj_bm_item_al</object>
+            <object>objects\obj_bm_slash_al</object>
+            <object>objects\obj_bm_run_al</object>
+            <object>objects\obj_bm_shoot_al</object>
+          </objects>
+        </objects>
+      </objects>
+      <objects name="Universal">
+        <object>objects\obj_battle_gui</object>
+        <object>objects\obj_battle_timer</object>
+        <object>objects\obj_battle_timer_wall</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -78,6 +151,9 @@
       <rooms name="Stage 1">
         <room>rooms\rm_bar_main</room>
       </rooms>
+    </rooms>
+    <rooms name="Arenas">
+      <room>rooms\ar_beta_zombie</room>
     </rooms>
   </rooms>
   <help>

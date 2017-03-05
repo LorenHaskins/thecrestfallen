@@ -30,9 +30,7 @@ grav = 0; //This object has no gravity
 hsp = 0; //Upon creating this object doesn't move
 vsp = 0; //Nor vertically
 movespeed = 1; //This object as the possibility of moving 2px per frame
-wall = 1280-sprite_width; //Background Width - Frame Width
 depth = 1000 //Positive Numbers and further away
-globalvar bg_mvmt; //Makes bg_mvmt a global variable
 </string>
           </argument>
         </arguments>
