@@ -35,19 +35,9 @@ str = 1; //Strength Stat
 dex = 1; //Dexterity Stat
 def = 1; //Defense
 agil = 1; //Agility
-fear = 0;
-
-//Stats that rely on other stats
-dodge_chance = (agil*0.01);
-
-if ((agil-fear)*0.01&lt;0)
-{
-    initiative = 0.01;
-}
-else
-{
-    initiative = (agil-fear)*0.01    
-}
+fear = 0; //This will be broken down into enemy classes. IE: "Caeleb has a vampire fear of 5"
+            //Enemies will have fear engines determined by Playing Character level, or special items
+spd = 5; //Determines Initiative
 </string>
           </argument>
         </arguments>
@@ -70,7 +60,10 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Determine Level
+            <string>///Level and Stat Dist.
+    //This is currently the Beta Test for Alsius
+
+//Determine Level
 if xp &gt;= 2
 {
     level = 2;

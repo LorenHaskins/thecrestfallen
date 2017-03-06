@@ -54,7 +54,7 @@
     <instance objName="obj_begin" x="640" y="600" name="inst_EBAFB920" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_book_cover" x="-512" y="-544" name="inst_55EE530B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="25"/>
     <instance objName="init_start_game" x="1216" y="64" name="inst_D550112C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="alsius_stats" x="32" y="32" name="inst_1FBE0AAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_alsius_stats" x="32" y="32" name="inst_1FBE0AAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
