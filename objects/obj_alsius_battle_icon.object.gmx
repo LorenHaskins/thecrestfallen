@@ -32,8 +32,7 @@ vsp = 0;
 grav = 0;
 enemy_speed = 0;
 turn = false;
-
-
+initiative = obj_alsius_stats.spd;
 </string>
           </argument>
         </arguments>

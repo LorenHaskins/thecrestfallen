@@ -55,6 +55,8 @@
     <instance objName="obj_beta_battle_zombie" x="992" y="288" name="inst_ACF3A3D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_alsius_battle" x="96" y="256" name="inst_BD2853BE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_battle_timer" x="640" y="64" name="inst_64EFC815" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="debug" x="-32" y="-32" name="inst_59664D21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="debug" x="64" y="64" name="inst_BC0CA70D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

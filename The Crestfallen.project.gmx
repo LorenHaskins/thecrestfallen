@@ -129,6 +129,7 @@
       <object>objects\obj_wall_objects</object>
       <object>objects\obj_wall</object>
       <object>objects\obj_rescue_button</object>
+      <object>objects\debug</object>
     </objects>
     <objects name="UI">
       <objects name="Battle Gui">
