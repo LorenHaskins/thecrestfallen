@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>4227200</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>stop_time = 0; //Prevents room from being frozen despite running from a previous battle.</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_rescue_button" x="1216" y="64" name="inst_2139C2B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_beta_battle_zombie" x="992" y="288" name="inst_ACF3A3D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_beta_battle_zombie" x="992" y="448" name="inst_ACF3A3D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_alsius_battle" x="96" y="256" name="inst_BD2853BE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_battle_timer" x="640" y="64" name="inst_64EFC815" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="debug" x="-32" y="-32" name="inst_59664D21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

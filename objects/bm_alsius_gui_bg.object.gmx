@@ -148,6 +148,14 @@ instance_create
     ((room_height-gui_height)-(room_height*0.05)),
     obj_gui_wall
 )
+
+instance_create
+(
+    (room_width/2),
+    (room_height+(gui_height*1.25)),
+    obj_gui_wall
+)
+
 </string>
           </argument>
         </arguments>
@@ -173,9 +181,14 @@ instance_create
             <string>///Bring GUI on and off Screen
 
 //Causes the GUI to move on, and off screen.
-if ( battle_icon.turn = true )
+if ( battle_icon.turn = 1 )
 { 
     vsp = -movespeed;
+}
+
+if ( battle_icon.turn = 0 )
+{
+    vsp = movespeed;
 }
 
 

@@ -56,6 +56,10 @@ player_depth = 0
 NPC_depth = 10
 background_depth = -1000
 backstage_depth = -10000
+
+globalvar timer_start_x;
+timer_start_x = 0
+
 </string>
           </argument>
         </arguments>

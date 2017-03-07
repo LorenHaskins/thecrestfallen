@@ -91,7 +91,7 @@ dodge_chance = (agil*0.01);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Create Battle Sprite
+            <string>///Create Battle Sprite Icon
 
 
 battle_icon = obj_alsius_battle_icon

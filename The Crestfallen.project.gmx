@@ -32,6 +32,9 @@
     <sprites name="Beta Sprites">
       <sprites name="Zombie Man">
         <sprite>sprites\spr_beta_zombie</sprite>
+        <sprite>sprites\spr_beta_zombie_full_hp</sprite>
+        <sprite>sprites\spr_beta_zombie_injured</sprite>
+        <sprite>sprites\spr_beta_zombie_dead</sprite>
       </sprites>
       <sprites name="Beta_Alsius_Battle">
         <sprite>sprites\spr_al_battle_gun_atk</sprite>

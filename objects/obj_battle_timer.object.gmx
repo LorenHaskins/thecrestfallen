@@ -29,6 +29,9 @@
 x+(sprite_get_width(spr_battle_timer)/2)+(sprite_get_width(spr_battle_timer_wall)/2),
 y-(sprite_get_height(spr_battle_timer)/2)+(sprite_get_height(spr_battle_timer_wall)/2),
 obj_battle_timer_wall)
+
+timer_start_x = obj_battle_timer.x-(sprite_get_width(spr_battle_timer)/2)+(sprite_get_width(object_get_sprite(obj_alsius_battle_icon)/2));
+timer_start_y = y;
 </string>
           </argument>
         </arguments>

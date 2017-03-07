@@ -30,6 +30,14 @@
 grav = 0;
 hsp = 0;
 vsp = 0;
+attacker_icon = 0;
+attacker_gui = 0;
+attack_name = 0;
+
+//Define Battle Sprites
+full_health = spr_beta_zombie_full_hp;
+injured = spr_beta_zombie_injured;
+dead = spr_beta_zombie_dead;
 
 ///Depth
 depth = -1101;
@@ -59,8 +67,8 @@ level = 2; //Current Level
 
 xp_worth = 1
 
-max_hp = 10; //Maximum Health Points
-cur_hp = 10; //Current Health Points
+max_hp = 4; //Maximum Health Points
+cur_hp = 4; //Current Health Points
 str = 1; //Strength Stat
 dex = 1; //Dexterity Stat
 def = 1; //Defense
@@ -104,6 +112,46 @@ battle_icon.initiative = spd
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (cur_hp &gt;= (max_hp/2))
+{
+    sprite_index = full_health;
+}
+
+if (cur_hp &lt;= (max_hp/2))
+{
+    if (cur_hp &gt; 0 )
+    {
+    sprite_index = injured;
+    }
+}
+
+if (cur_hp &lt;= 0)
+{
+    sprite_index = dead;
+    instance_deactivate_object(battle_icon)
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="7">
       <action>
         <libid>1</libid>
@@ -121,9 +169,26 @@ battle_icon.initiative = spd
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ( bm_alsius_slash.button_state = 1 )
+            <string>///Getting Attacked
+//Must be applied to every single enemy
+
+//When Alsius Uses Slash Attack (In this case, Alsius is the "attacker"
+//Must create a sequence for every single attack in the game.
+if ( bm_alsius_slash.button_state = 1 )
 {
-cur_hp += -1;
+    if ( stop_time = true )
+    {
+    attacker_icon = obj_alsius_battle_icon //Name the attackers battle icon
+    attacker_gui = bm_alsius_gui_bg //Name the gui_bg of the attacker
+    attack_name = bm_alsius_slash //Name of the attack
+    cur_hp += -1; //In the future put the STR vs DEF script
+    attacker_icon.x += (-(sprite_get_width(spr_battle_timer)-(sprite_get_width(spr_battle_icon_alsius)))) //Resets Battle Timer to 0
+    stop_time = false //Turns timer back on
+    attacker_icon.turn = 0;
+    attack_name.button_state = 0; //Resets Variable
+    attacker_icon = 0; //Resets Variable
+    attacker_gui = 0; //Resets Variable
+    }
 }
 </string>
           </argument>
