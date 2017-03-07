@@ -31,12 +31,14 @@ xp = 0;
 
 max_hp = 10; //Maximum Health Points
 cur_hp = 5; //Current Health Points
-str = 1; //Strength Stat
-dex = 1; //Dexterity Stat
-def = 1; //Defense
-agil = 1; //Agility
+cqc = 10; //Strength Stat
+aim = 10; //Dexterity Stat
+def = 10; //Defense
+agi = 10; //Agility
+
 fear = 0; //This will be broken down into enemy classes. IE: "Caeleb has a vampire fear of 5"
             //Enemies will have fear engines determined by Playing Character level, or special items
+
 spd = 5; //Determines Initiative
 </string>
           </argument>
@@ -82,10 +84,6 @@ if xp &gt;= 4
 //Determine State
 
 max_hp = level*10; //Maximum Health Points
-str = level; //Strength Stat
-dex = level; //Dexterity Stat
-def = level; //Defense
-agil = level; //Agility
 </string>
           </argument>
         </arguments>

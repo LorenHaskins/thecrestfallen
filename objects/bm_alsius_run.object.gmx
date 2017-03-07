@@ -92,16 +92,16 @@ if (button_state == 1)
     //The only 1 on this script should be one of the 5 on the top, the rest all 0.
 if (button_state == 0)
 {
-    parent_gui.str_atk_button.button_state = 0;
-    parent_gui.dex_atk_button.button_state = 0;
+    parent_gui.cqc_atk_button.button_state = 0;
+    parent_gui.aim_atk_button.button_state = 0;
     parent_gui.item_button.button_state = 0;
     parent_gui.def_button.button_state = 0;
     parent_gui.run_button.button_state = 1;
 }
 else
 {
-    parent_gui.str_atk_button.button_state = 0;
-    parent_gui.dex_atk_button.button_state = 0;
+    parent_gui.cqc_atk_button.button_state = 0;
+    parent_gui.aim_atk_button.button_state = 0;
     parent_gui.item_button.button_state = 0;
     parent_gui.def_button.button_state = 0;
     parent_gui.run_button.button_state = 0; 

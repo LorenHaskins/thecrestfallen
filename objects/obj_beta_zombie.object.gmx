@@ -76,6 +76,7 @@ switch (aggro_state)
     case aggro_states.patrol:
     {
         script_execute(scr_patrol_timer)
+        vsp = 0;
         if (distance_to_object(obj_player) &lt; 200) 
         {
             aggro_state = aggro_states.chase;
@@ -86,13 +87,13 @@ switch (aggro_state)
     {
         dir = sign(obj_player.x - x);
         hsp = dir * chase_speed;
+        vsp = sign(obj_player.y-y);
         if (distance_to_object(obj_player) &gt; 300) 
         {
             aggro_state = aggro_states.patrol
         }  
         break;
     }
-
 }
 
 if (place_meeting(x + hsp, y, obj_wall_objects))
@@ -105,6 +106,7 @@ if (place_meeting(x + hsp, y, obj_wall_objects))
 }
 
 x += ( hsp + move_all )
+y += ( vsp )
 </string>
           </argument>
         </arguments>

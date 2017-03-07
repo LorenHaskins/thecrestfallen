@@ -66,7 +66,7 @@ depth = player_depth;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Character Movement
+            <string>///Character Movement Horizontal
 
 //Player Input
 
@@ -98,6 +98,8 @@ x += hsp;
 
 //Tell the background when to move
 player_mov = hsp
+
+
 </string>
           </argument>
         </arguments>
@@ -120,69 +122,48 @@ player_mov = hsp
             <kind>1</kind>
             <string>///Sprite Control
 
-//When Running
-if keyboard_check(vk_lshift)
+if ( hsp = 0 )
 {
-    if ( hsp &gt;= movespeed ) 
-    {
-        sprite_index = spr_run_right;
-    } 
-    else if ( hsp &lt;= -movespeed )
-    {
-        sprite_index = spr_run_left;
-    } 
-    else if ( hsp = 0 )
-    {
-        if ( move = 1 )
-        {
-            sprite_index = spr_idle_right;
-        }
-        else if ( move = -1 )
+        if (sprite_index = spr_walk_left)
         {
             sprite_index = spr_idle_left;
         }
+        if (sprite_index = spr_run_left)
+        {
+            sprite_index = spr_idle_left;
+        }
+        if  (sprite_index = spr_walk_right)
+        {
+            sprite_index = spr_idle_right;
+        }
+        if (sprite_index = spr_run_right)
+        {
+            sprite_index = spr_idle_right;
+        }
+            
+}
+
+if ( hsp &gt; 0 )
+{
+    if (keyboard_check(vk_lshift))
+    {
+        sprite_index = spr_run_right;
+    }
+    else
+    {
+        sprite_index = spr_walk_right;
     }
 }
 
-
-//When Walking
-if ( hsp &gt; 0 ) 
+if ( hsp &lt; 0 )
 {
-    sprite_index = spr_walk_right;
-} 
-else if ( hsp &lt; 0 )
-{
-    sprite_index = spr_walk_left;
-} 
-else if ( hsp = 0 )
-{
-    if ( move = 1 )
+    if (keyboard_check(vk_lshift))
     {
-        sprite_index = spr_idle_right;
+        sprite_index = spr_run_left;
     }
-    else if ( move = -1 )
+    else
     {
-        sprite_index = spr_idle_left;
-    }
-}
-        
-//Upon Key Release
-if keyboard_check_released(vk_right)
-{
-    sprite_index = spr_idle_right;
-}
-
-if keyboard_check_released(vk_left)
-{
-    sprite_index = spr_idle_left;
-}
-
-//Mashke
-if keyboard_check(vk_right) 
-{
-    if keyboard_check(vk_left)
-    {
-        sprite_index = spr_idle_right;
+        sprite_index = spr_walk_left;
     }
 }
 </string>

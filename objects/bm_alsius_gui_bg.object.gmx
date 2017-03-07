@@ -38,8 +38,8 @@ battle_icon = obj_alsius_battle_icon; //Input Battle Icon
 
 //OBJ Button for this Player Character
 total_buttons = 5; //total battle buttons (some characters will have less...)
-str_atk_button = bm_alsius_slash;
-dex_atk_button = bm_alsius_shoot;
+cqc_atk_button = bm_alsius_slash;
+aim_atk_button = bm_alsius_shoot;
 item_button = bm_alsius_item;
 def_button = bm_alsius_defend;
 run_button = bm_alsius_run;
@@ -90,14 +90,14 @@ instance_create
 (
     gui.x + (button_x_posit * button_posit_01), //Last Number is Button Order
     gui.y,
-    str_atk_button
+    cqc_atk_button
 )
 
 instance_create 
 (
     gui.x + (button_x_posit * button_posit_02), //Last Number is Button Order
     gui.y,
-    dex_atk_button
+    aim_atk_button
 )
 
 instance_create 
@@ -205,9 +205,9 @@ if (place_meeting(x, y+vsp, obj_gui_wall))
 
 y += vsp;
 
-// Move the buttons - ENTER ALL BUTTON NAMES HERE
-str_atk_button.y = y
-dex_atk_button.y = y
+// Move the buttons
+cqc_atk_button.y = y
+aim_atk_button.y = y
 def_button.y = y
 item_button.y = y
 run_button.y = y

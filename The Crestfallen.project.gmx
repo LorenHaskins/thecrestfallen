@@ -74,6 +74,15 @@
         </sprites>
         <sprite>sprites\spr_gui_wall</sprite>
       </sprites>
+      <sprites name="Health Bars">
+        <sprites name="Miniature Health Bar">
+          <sprite>sprites\spr_mini_hp_low</sprite>
+          <sprite>sprites\spr_mini_hp_mid</sprite>
+          <sprite>sprites\spr_mini_hp_full</sprite>
+          <sprite>sprites\spr_mini_hp_top</sprite>
+          <sprite>sprites\spr_mini_hp_bottom</sprite>
+        </sprites>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -91,6 +100,7 @@
     <scripts name="Enemy Collision">
       <script>scripts\scr_en_beta_zombie.gml</script>
     </scripts>
+    <script>scripts\damage_rolls.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Buttons">

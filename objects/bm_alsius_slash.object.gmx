@@ -32,8 +32,14 @@ depth = gui_fg_depth;
 button_down_spr = spr_battle_button_slash_down;
 button_up_spr = spr_battle_button_slash_up;
 parent_gui = bm_alsius_gui_bg;
+character_stats = obj_alsius_stats;
 
-button_state = 0 //0 is UP, 1 is DOWN
+button_state = 0; //0 is UP, 1 is DOWN
+d_20 = 0;
+hit_roll = 0;
+full_dmg = 0;
+part_dmg = 0;
+crit_dmg = 0;
 </string>
           </argument>
         </arguments>
@@ -70,6 +76,36 @@ if (button_state == 1)
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//CQC Modifier
+
+if ( button_state = 1 )
+{
+    d_20 = irandom_range(1, 20);
+    hit_roll = (d_20 + round(character_stats.level / 2) + character_stats.cqc);
+    full_dmg = round(((irandom_range(75,100)/100)*character_stats.cqc));
+    part_dmg = round(((irandom_range(50,75)/100)*character_stats.cqc));
+    crit_dmg = round(((irandom_range(100,200)/100)*character_stats.cqc));
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="6" enumb="4">
       <action>
@@ -88,24 +124,55 @@ if (button_state == 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// When clicked change button state
+            <string>/// Change Button Up and Down
     //The only 1 on this script should be one of the 5 on the top, the rest all 0.
 if (button_state == 0)
 {
-    parent_gui.str_atk_button.button_state = 1;
-    parent_gui.dex_atk_button.button_state = 0;
+    parent_gui.cqc_atk_button.button_state = 1;
+    parent_gui.aim_atk_button.button_state = 0;
     parent_gui.item_button.button_state = 0;
     parent_gui.def_button.button_state = 0;
     parent_gui.run_button.button_state = 0;
 }
 else
 {
-    parent_gui.str_atk_button.button_state = 0;
-    parent_gui.dex_atk_button.button_state = 0;
+    parent_gui.cqc_atk_button.button_state = 0;
+    parent_gui.aim_atk_button.button_state = 0;
     parent_gui.item_button.button_state = 0;
     parent_gui.def_button.button_state = 0;
     parent_gui.run_button.button_state = 0; 
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+
+draw_text(500,200,"Dice: " +string(d_20));
+draw_text(500,216,"CQC : " +string(character_stats.cqc));
+draw_text(500,232,"Hit Roll : " +string(hit_roll));
+draw_text(500,248,"Full DMG : " +string(full_dmg));
+draw_text(500,264,"Part DMG : " +string(part_dmg));
+draw_text(500,280,"Crit DMG : " +string(crit_dmg));
+
 </string>
           </argument>
         </arguments>
