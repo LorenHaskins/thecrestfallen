@@ -32,8 +32,15 @@ depth = gui_fg_depth;
 button_down_spr = spr_battle_button_shoot_down;
 button_up_spr = spr_battle_button_shoot_up;
 parent_gui = bm_alsius_gui_bg;
+character_stats = obj_alsius_stats;
+
 
 button_state = 0 //0 is UP, 1 is DOWN
+d_20 = 0;
+hit_roll = 0;
+full_dmg = 0;
+part_dmg = 0;
+crit_dmg = 0;
 </string>
           </argument>
         </arguments>
@@ -65,6 +72,36 @@ if (button_state == 0)
 if (button_state == 1)
 {
     sprite_index = button_down_spr;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Damage Roll
+
+if ( button_state = 1 )
+{
+    d_20 = irandom_range(1, 20);
+    hit_roll = (d_20 + round(character_stats.level / 2) + character_stats.aim);
+    full_dmg = round(((irandom_range(75,100)/100)*character_stats.aim));
+    part_dmg = round(((irandom_range(50,75)/100)*character_stats.aim));
+    crit_dmg = round(((irandom_range(100,200)/100)*character_stats.aim));
 }
 </string>
           </argument>

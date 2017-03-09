@@ -31,7 +31,6 @@
     </sprites>
     <sprites name="Beta Sprites">
       <sprites name="Zombie Man">
-        <sprite>sprites\spr_beta_zombie</sprite>
         <sprite>sprites\spr_beta_zombie_full_hp</sprite>
         <sprite>sprites\spr_beta_zombie_injured</sprite>
         <sprite>sprites\spr_beta_zombie_dead</sprite>
@@ -84,6 +83,13 @@
         </sprites>
       </sprites>
     </sprites>
+    <sprites name="Enemys">
+      <sprites name="Beta Zombie">
+        <sprite>sprites\spr_beta_zombie_idle</sprite>
+        <sprite>sprites\spr_beta_zombie_walk_left</sprite>
+        <sprite>sprites\spr_beta_zombie_walk_right</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Act 1">
@@ -101,6 +107,7 @@
       <script>scripts\scr_en_beta_zombie.gml</script>
     </scripts>
     <script>scripts\damage_rolls.gml</script>
+    <script>scripts\damage_roll_vs_player.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Buttons">
@@ -116,8 +123,8 @@
     <objects name="Playable Characters">
       <objects name="Alsius Objects">
         <object>objects\obj_alsius_open_world</object>
-        <object>objects\obj_alsius_battle</object>
         <object>objects\obj_alsius_stats</object>
+        <object>objects\obj_alsius_battle</object>
         <object>objects\obj_alsius_battle_icon</object>
         <objects name="Battle Menu">
           <object>objects\bm_alsius_gui_bg</object>

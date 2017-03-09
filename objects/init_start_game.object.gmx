@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>0</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -60,6 +60,13 @@ backstage_depth = -10000
 globalvar timer_start_x;
 timer_start_x = 0
 
+globalvar party_members; //how many characters are in the party
+globalvar party_member_a;
+globalvar party_member_b;
+globalvar party_member_c;
+
+globalvar alsius_defend;
+alsius_defend = 1;
 </string>
           </argument>
         </arguments>
@@ -98,6 +105,31 @@ enum p_dist
     d_min
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Current Party - All Global Variables
+party_members = 1; // How many Members are in the party
+party_member_a = obj_alsius_stats // This will be the _stats object of Party Leader -- This will eventaully determine the drawn playing character
+party_member_b = 0 //This will be the second character in the party, if applicable
+party_member_c = 0 //This will be the last character in the party.
 </string>
           </argument>
         </arguments>
