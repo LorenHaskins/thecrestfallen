@@ -64,12 +64,16 @@ button_state = 0 //0 is UP, 1 is DOWN
 if (button_state == 0)
 {
     sprite_index = button_up_spr;
-    def_active = 1;
 }
 
 if (button_state == 1)
 {
     sprite_index = button_down_spr;
+    character_stats.defense_multiplyer *= 2;
+    button_state = 0;
+    battle_icon.turn = 0;
+    battle_icon.x += (-(sprite_get_width(spr_battle_timer)-(sprite_get_width(spr_battle_icon_alsius)))); //Resets Battle Timer to 0
+    stop_time = false;
 }
 </string>
           </argument>
@@ -93,7 +97,7 @@ if (button_state == 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// When clicked change button state
+            <string>/// Button State
 
 // When clicked change button state
     //The only 1 on this script should be one of the 5 on the top, the rest all 0.
@@ -113,8 +117,6 @@ else
     parent_gui.def_button.button_state = 0;
     parent_gui.run_button.button_state = 0; 
 }
-
-
 </string>
           </argument>
         </arguments>

@@ -34,7 +34,7 @@ movespeed = 10;
 depth = gui_bg_depth;
 gui = bm_alsius_gui_bg; //Input self name
 battle_icon = obj_alsius_battle_icon; //Input Battle Icon
-player_defend = alsius_defend;
+character_stats = obj_alsius_stats;
 
 
 //OBJ Button for this Player Character
@@ -185,12 +185,12 @@ instance_create
 if ( battle_icon.turn = 1 )
 { 
     vsp = -movespeed;
+    character_stats.defense_multiplyer = 1;
 }
 
 if ( battle_icon.turn = 0 )
 {
     vsp = movespeed;
-
 }
 
 

@@ -32,14 +32,12 @@ xp = 0;
 max_hp = 50; //Maximum Health Points
 cur_hp = 50; //Current Health Points
 cqc = 5; //Strength Stat
-aim = 5; //Dexterity Stat
-def_stat = 5; //Defense
+aim = 5; //Dexterity Stats
+base_def = 5;
 agi = 5; //Agility
 fear = 0; //This will be broken down into enemy classes. IE: "Caeleb has a vampire fear of 5"
             //Enemies will have fear engines determined by Playing Character level, or special items
 spd = 5; //Determines Initiative
-
-def = def_stat * alsius_defend
 </string>
           </argument>
         </arguments>
@@ -60,7 +58,11 @@ def = def_stat * alsius_defend
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>///Initialize Variables
+hsp = 0;
+vsp = 0;
+defense_multiplyer = 1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -104,6 +106,10 @@ if xp &gt;= 4
 //Determine State
 
 max_hp = level*10; //Maximum Health Points
+
+//Def multiplyer
+def = base_def * defense_multiplyer
+
 </string>
           </argument>
         </arguments>
@@ -127,7 +133,7 @@ max_hp = level*10; //Maximum Health Points
           <argument>
             <kind>1</kind>
             <string>draw_text(40,40,cur_hp)
-draw_text(40,56,alsius_defend)
+draw_text(40,56,def)
 </string>
           </argument>
         </arguments>
