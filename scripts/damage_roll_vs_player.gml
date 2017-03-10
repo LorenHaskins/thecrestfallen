@@ -50,11 +50,11 @@
         {
             if ( hit_roll > defender_roll )
             {
-                cur_hp += -full_dmg
+                defender.cur_hp += -full_dmg
             }
             else
             {
-                cur_hp += -part_dmg
+                defender.cur_hp += -part_dmg
             }
         }
     }
