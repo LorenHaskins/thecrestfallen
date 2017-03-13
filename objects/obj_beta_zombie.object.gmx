@@ -30,11 +30,12 @@
 grav = 0;
 hsp = 0;
 vsp = 0;
+freeze = 1
 sprite_idle = spr_beta_zombie_idle;
 sprite_walk_left = spr_beta_zombie_walk_left;
 sprite_walk_right = spr_beta_zombie_walk_right;
 image_speed = 0.08;
-freeze = 1
+arena = ar_beta_zombie //Which room will the battle take place, this may become a script to decide where to fight
 
 //If movement is not allowed after a certain frame, put in freeze_frame. Otherwise put 1000
 freeze_frame = 2 
@@ -60,6 +61,109 @@ chase_speed = 2;
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sprite Control
+
+if ( hsp == 0 )
+{
+    sprite_index = sprite_idle;
+}
+
+if ( hsp &gt; 0 )
+{
+    sprite_index = sprite_walk_right;
+}
+
+if ( hsp &lt; 0 )
+{
+    sprite_index = sprite_walk_left;
+}
+
+
+//This sprite has an unusual animation that would cause movement to stop. 
+if ( image_index &gt;= freeze_frame ) 
+{
+    freeze = 0;
+}
+else
+{
+    freeze = 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Enter Arena
+
+//If the enemy touches the battle_block created by obj_player
+if (place_meeting(x,y, obj_battle_block))
+{
+    //If there is no room_transition
+    if(!instance_exists(obj_room_transition))
+    {
+        //All these if statements decide if the fight is Fair, Preemptive, or Enemy Strikes First
+        if (( sign(obj_player.move) + sign(object_index.hsp) == 0 ))
+        {
+           fade_color = c_black; 
+        }        
+        if ((obj_battle_block.x &lt; object_index.x) &amp;&amp; ( sign(obj_player.move) + sign(object_index.hsp) == 2 ))
+        {
+           fade_color = c_green; 
+        }        
+        if ((obj_battle_block.x &lt; object_index.x) &amp;&amp; ( sign(obj_player.move) + sign(object_index.hsp) &lt;= -1 ))
+        {
+           fade_color = c_red; 
+        }        
+        if ((obj_battle_block.x &gt; object_index.x) &amp;&amp; ( sign(obj_player.move) + sign(object_index.hsp) == 2 ))
+        {
+           fade_color = c_red; 
+        }        
+        if ((obj_battle_block.x &gt; object_index.x) &amp;&amp; ( sign(obj_player.move) + sign(object_index.hsp) &lt;= -1 ))
+        {
+           fade_color = c_green; 
+        }        
+        //This creates the transition. The transition will actually do the "goto room" move, but the room is decided as a variable on the enemy marked "Arena"
+        var tempRoomFade;
+        tempRoomFade = instance_create(x,y,obj_room_transition);
+        //I don't completely understand the other.arena thing, but it works right now, so... we'll see if it breaks stuff later.
+        tempRoomFade.tempTarget = other.arena
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -116,53 +220,6 @@ if (place_meeting(x + hsp, y, obj_wall_objects))
 
 x += ( ( hsp * freeze ) + move_all )
 y += ( vsp )
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Sprite Control
-
-if ( hsp == 0 )
-{
-    sprite_index = sprite_idle;
-}
-
-if ( hsp &gt; 0 )
-{
-    sprite_index = sprite_walk_right;
-}
-
-if ( hsp &lt; 0 )
-{
-    sprite_index = sprite_walk_left;
-}
-
-
-//This sprite has an unusual animation that would cause movement to stop. 
-if ( image_index &gt;= freeze_frame ) 
-{
-    freeze = 0;
-}
-else
-{
-    freeze = 1;
-}
 </string>
           </argument>
         </arguments>

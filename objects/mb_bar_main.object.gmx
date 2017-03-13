@@ -31,6 +31,12 @@ hsp = 0; //Upon creating this object doesn't move
 vsp = 0; //Nor vertically
 movespeed = 1; //This object as the possibility of moving 2px per frame
 depth = 1000 //Positive Numbers and further away
+
+//Create Far Right Wall
+instance_create(sprite_get_width(sprite_index),0,obj_wall)
+
+//Create Far Left Wall
+instance_create((sprite_get_width(sprite_index)-room_width)*-1,0,obj_wall)
 </string>
           </argument>
         </arguments>

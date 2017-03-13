@@ -31,6 +31,7 @@ depth = gui_fg_depth;
 
 button_down_spr = spr_battle_button_shoot_down;
 button_up_spr = spr_battle_button_shoot_up;
+mouse_over_spr = spr_battle_button_shoot_mouse_over;
 parent_gui = bm_alsius_gui_bg;
 character_stats = obj_alsius_stats;
 
@@ -66,7 +67,14 @@ crit_dmg = 0;
             <string>///Change Sprite based on Button State
 if (button_state == 0)
 {
-    sprite_index = button_up_spr;
+    if (distance_to_point(mouse_x,mouse_y) &lt;= 0)
+    {
+        sprite_index = mouse_over_spr;
+    }
+    else
+    {
+    sprite_index = button_up_spr
+    }
 }
 
 if (button_state == 1)
@@ -109,6 +117,46 @@ if ( button_state = 1 )
       </action>
     </event>
     <event eventtype="6" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// When clicked change button state
+    //The only 1 on this script should be one of the 5 on the top, the rest all 0.
+if (button_state == 0)
+{
+    parent_gui.cqc_atk_button.button_state = 0;
+    parent_gui.aim_atk_button.button_state = 1;
+    parent_gui.item_button.button_state = 0;
+    parent_gui.def_button.button_state = 0;
+    parent_gui.run_button.button_state = 0;
+}
+else
+{
+    parent_gui.cqc_atk_button.button_state = 0;
+    parent_gui.aim_atk_button.button_state = 0;
+    parent_gui.item_button.button_state = 0;
+    parent_gui.def_button.button_state = 0;
+    parent_gui.run_button.button_state = 0; 
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="83">
       <action>
         <libid>1</libid>
         <id>603</id>

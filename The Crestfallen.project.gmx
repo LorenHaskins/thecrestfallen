@@ -50,7 +50,9 @@
       <sprites name="Battle GUI">
         <sprites name="Timer Icons">
           <sprites name="Playing Characters">
-            <sprite>sprites\spr_battle_icon_alsius</sprite>
+            <sprites name="Alsius">
+              <sprite>sprites\spr_battle_icon_alsius</sprite>
+            </sprites>
           </sprites>
           <sprites name="Enemies">
             <sprite>sprites\spr_battle_icon_beta_zombie</sprite>
@@ -70,6 +72,11 @@
           <sprite>sprites\spr_battle_button_run_down</sprite>
           <sprite>sprites\spr_battle_button_shoot_down</sprite>
           <sprite>sprites\spr_battle_button_slash_down</sprite>
+          <sprite>sprites\spr_battle_button_slash_mouse_over</sprite>
+          <sprite>sprites\spr_battle_button_shoot_mouse_over</sprite>
+          <sprite>sprites\spr_battle_button_defend_mouse_over</sprite>
+          <sprite>sprites\spr_battle_button_run_mouse_over</sprite>
+          <sprite>sprites\spr_battle_button_item_mouse_over</sprite>
         </sprites>
         <sprite>sprites\spr_gui_wall</sprite>
       </sprites>
@@ -82,6 +89,7 @@
           <sprite>sprites\spr_mini_hp_bottom</sprite>
         </sprites>
       </sprites>
+      <sprite>sprites\spr_mouse</sprite>
     </sprites>
     <sprites name="Enemys">
       <sprites name="Beta Zombie">
@@ -150,6 +158,7 @@
       <object>objects\obj_wall</object>
       <object>objects\obj_rescue_button</object>
       <object>objects\debug</object>
+      <object>objects\obj_room_transition</object>
     </objects>
     <objects name="UI">
       <objects name="Battle Gui">
@@ -164,6 +173,7 @@
         <object>objects\obj_battle_timer</object>
         <object>objects\obj_battle_timer_wall</object>
         <object>objects\obj_gui_wall</object>
+        <object>objects\obj_battle_block</object>
       </objects>
     </objects>
   </objects>

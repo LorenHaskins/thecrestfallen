@@ -120,14 +120,23 @@ cqc_decide = 45 //Must be less than attack_chance, will cause aim to be opposite
             <kind>1</kind>
             <string>///Create Battle Sprite
 battle_icon = obj_battle_icon_beta_zombie
+battle_icon_x = 0;
 
 battle_icon_spr_width = sprite_get_width(object_get_sprite(battle_icon))
 battle_icon_spr_height = sprite_get_height(object_get_sprite(battle_icon))
 
-instance_create(
-obj_battle_timer.x-(sprite_get_width(spr_battle_timer)/2)+(battle_icon_spr_width/2),
-obj_battle_timer.y-(sprite_get_height(spr_battle_timer)/2)+(battle_icon_spr_height/2),
-battle_icon)
+//If room transition is red, he gets a preemptive strike
+if ( fade_color = c_red )
+{
+    battle_icon_x = obj_battle_timer.x+(sprite_get_width(obj_battle_timer)/4);
+}
+else
+{
+    battle_icon_x = obj_battle_timer.x-(sprite_get_width(spr_battle_timer)/2)+(battle_icon_spr_width/2);
+}
+
+instance_create(battle_icon_x,obj_battle_timer.y-(sprite_get_height(spr_battle_timer)/2)+(battle_icon_spr_height/2),battle_icon)
+
 
 battle_icon.initiative = spd
 </string>

@@ -41,6 +41,7 @@ stop_time = false;
 
 obj_player = obj_alsius_open_world
 
+globalvar transition_depth;
 globalvar gui_fg_depth;
 globalvar gui_bg_depth;
 globalvar foreground_depth;
@@ -49,6 +50,7 @@ globalvar NPC_depth;
 globalvar background_depth;
 globalvar backstage_depth;
 
+transition_depth = -1000000
 gui_fg_depth = -100000
 gui_bg_depth = -10000
 foreground_depth = -1000
@@ -67,6 +69,15 @@ globalvar party_member_c;
 
 globalvar alsius_defend;
 alsius_defend = 1;
+
+globalvar run_allowed;
+run_allowed = 1;
+
+window_set_cursor(cr_none);
+cursor_sprite = spr_mouse;
+
+globalvar fade_color;
+fade_color = c_black;
 </string>
           </argument>
         </arguments>

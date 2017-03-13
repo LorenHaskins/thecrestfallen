@@ -52,13 +52,11 @@
   </views>
   <instances>
     <instance objName="mb_bar_main" x="0" y="0" name="inst_5704598F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="-476" y="0" name="inst_8476B0F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_alsius_open_world" x="160" y="448" name="inst_54E9FF1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="1724" y="0" name="inst_DEB9F830" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_objects" x="1600" y="0" name="inst_1A4ED3BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_objects" x="0" y="0" name="inst_0266B307" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chandelier" x="480" y="-192" name="inst_D2F26B6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_beta_zombie" x="1120" y="256" name="inst_B507BA4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_beta_zombie" x="1408" y="224" name="inst_FA8D2125" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
