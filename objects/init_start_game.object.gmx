@@ -78,6 +78,15 @@ cursor_sprite = spr_mouse;
 
 globalvar fade_color;
 fade_color = c_black;
+
+globalvar mute_bgm;
+mute_bgm = 0;
+
+globalvar bgm;
+bgm = -1;
+
+globalvar set_bgm_volume;
+set_bgm_volume = 0.1;
 </string>
           </argument>
         </arguments>
@@ -115,7 +124,6 @@ enum p_dist
     d_mid,
     d_min
 }
-
 </string>
           </argument>
         </arguments>
@@ -136,11 +144,62 @@ enum p_dist
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Current Party - All Global Variables
+            <string>///Current Party - All Global Variables
 party_members = 1; // How many Members are in the party
 party_member_a = obj_alsius_stats // This will be the _stats object of Party Leader -- This will eventaully determine the drawn playing character
 party_member_b = 0 //This will be the second character in the party, if applicable
 party_member_c = 0 //This will be the last character in the party.
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Environmental Sound Control
+
+//Define floor_type in each room / tile depending on the situation
+globalvar floor_type;
+floor_type = 0;
+
+//Floor Types
+globalvar wood; //Name the floor type here
+wood = sd_step_wood_01; //Name the sound file here
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Create BGM Generator
+instance_create(0,0,obj_bgm_generator);
 </string>
           </argument>
         </arguments>

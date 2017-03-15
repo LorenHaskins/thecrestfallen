@@ -10,7 +10,8 @@
   <persistent>0</persistent>
   <colour>8388863</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>floor_type = wood;
+bgm = Komiku___03___Big_person_tiny_cities_world_maps_theme;</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

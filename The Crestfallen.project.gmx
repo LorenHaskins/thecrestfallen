@@ -5,7 +5,16 @@
   </Configs>
   <datafiles number="1" name="datafiles"/>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="Walking">
+      <sound>sound\sd_step_wood_01</sound>
+    </sounds>
+    <sounds name="Background Music">
+      <sound>sound\Komiku___03___Big_person_tiny_cities_world_maps_theme</sound>
+      <sound>sound\Komiku___15___Lorage_et_laventure</sound>
+      <sound>sound\Komiku___10___Quelques_rues_sombres</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Main Characters">
       <sprites name="Alsius">
@@ -90,6 +99,7 @@
         </sprites>
       </sprites>
       <sprite>sprites\spr_mouse</sprite>
+      <sprite>sprites\spr_pause_menu</sprite>
     </sprites>
     <sprites name="Enemys">
       <sprites name="Beta Zombie">
@@ -104,6 +114,9 @@
       <backgrounds name="Stage 1">
         <background>background\bg_bar_main</background>
       </backgrounds>
+      <backgrounds name="Arenas">
+        <background>background\bg_arena_bar</background>
+      </backgrounds>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -117,6 +130,10 @@
     <script>scripts\damage_rolls.gml</script>
     <script>scripts\damage_roll_vs_player.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\font_origiin_88</font>
+    <font>fonts\font_angry</font>
+  </fonts>
   <objects name="objects">
     <objects name="Buttons">
       <object>objects\obj_begin</object>
@@ -159,6 +176,8 @@
       <object>objects\obj_rescue_button</object>
       <object>objects\debug</object>
       <object>objects\obj_room_transition</object>
+      <object>objects\obj_bgm_generator</object>
+      <object>objects\obj_pause</object>
     </objects>
     <objects name="UI">
       <objects name="Battle Gui">

@@ -10,7 +10,8 @@
   <persistent>0</persistent>
   <colour>4227200</colour>
   <showcolour>-1</showcolour>
-  <code>stop_time = 0; //Prevents room from being frozen despite running from a previous battle.</code>
+  <code>stop_time = 0; //Prevents room from being frozen despite running from a previous battle.
+bgm = Komiku___10___Quelques_rues_sombres;</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

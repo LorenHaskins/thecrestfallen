@@ -74,14 +74,17 @@ if (button_state == 0)
     }
 } 
 
-if (button_state == 1)
+if (battle_icon.turn == 1)
 {
-    sprite_index = button_down_spr;
-    character_stats.defense_multiplyer *= 2;
-    button_state = 0;
-    battle_icon.turn = 0;
-    battle_icon.x += (-(sprite_get_width(spr_battle_timer)-(sprite_get_width(spr_battle_icon_alsius)))); //Resets Battle Timer to 0
-    stop_time = false;
+    if (button_state == 1)
+    {
+        sprite_index = button_down_spr;
+        character_stats.defense_multiplyer *= 2;
+        button_state = 0;
+        battle_icon.turn = 0;
+        battle_icon.x += (-(sprite_get_width(spr_battle_timer)-(sprite_get_width(spr_battle_icon_alsius)))); //Resets Battle Timer to 0
+        stop_time = false;
+    }
 }
 </string>
           </argument>
@@ -151,21 +154,24 @@ else
 
 // When clicked change button state
     //The only 1 on this script should be one of the 5 on the top, the rest all 0.
-if (button_state == 0)
+if (battle_icon.turn == 1 )
 {
-    parent_gui.cqc_atk_button.button_state = 0;
-    parent_gui.aim_atk_button.button_state = 0;
-    parent_gui.item_button.button_state = 0;
-    parent_gui.def_button.button_state = 1;
-    parent_gui.run_button.button_state = 0;
-}
-else
-{
-    parent_gui.cqc_atk_button.button_state = 0;
-    parent_gui.aim_atk_button.button_state = 0;
-    parent_gui.item_button.button_state = 0;
-    parent_gui.def_button.button_state = 0;
-    parent_gui.run_button.button_state = 0; 
+    if (button_state == 0)
+    {
+        parent_gui.cqc_atk_button.button_state = 0;
+        parent_gui.aim_atk_button.button_state = 0;
+        parent_gui.item_button.button_state = 0;
+        parent_gui.def_button.button_state = 1;
+        parent_gui.run_button.button_state = 0;
+    }
+    else
+    {
+        parent_gui.cqc_atk_button.button_state = 0;
+        parent_gui.aim_atk_button.button_state = 0;
+        parent_gui.item_button.button_state = 0;
+        parent_gui.def_button.button_state = 0;
+        parent_gui.run_button.button_state = 0; 
+    }
 }
 </string>
           </argument>

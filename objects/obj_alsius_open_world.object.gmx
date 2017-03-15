@@ -25,25 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialize Variables
-grav = 0;
-hsp = 0;
-vsp = 0;
-movespeed = 2;
-run_spd = 2;
+            <string>///Make player attackable
 
-//Initialize all movement sprites
-spr_run_right = spr_al_walk_right;
-spr_walk_right = spr_al_walk_right;
-spr_idle_right = spr_al_idle_right;
-spr_run_left = spr_al_walk_left;
-spr_walk_left = spr_al_walk_left;
-spr_idle_left = spr_al_idle_left;
-sprite_index = spr_idle_right;
-image_speed = 0.08;
-
-///Depth
-depth = player_depth;
+if ( obj_player == object_index )
+{
+    instance_create(x,y,obj_battle_block)
+}
 </string>
           </argument>
         </arguments>
@@ -64,12 +51,25 @@ depth = player_depth;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Make player attackable
+            <string>///Initialize Variables
+grav = 0;
+hsp = 0;
+vsp = 0;
+movespeed = 2;
+run_spd = 2;
 
-if ( obj_player == object_index )
-{
-    instance_create(x,y,obj_battle_block)
-}
+//Initialize all movement sprites
+spr_run_right = spr_al_walk_right;
+spr_walk_right = spr_al_walk_right;
+spr_idle_right = spr_al_idle_right;
+spr_run_left = spr_al_walk_left;
+spr_walk_left = spr_al_walk_left;
+spr_idle_left = spr_al_idle_left;
+sprite_index = spr_idle_right;
+image_speed = 0.08;
+
+///Depth
+depth = player_depth;
 </string>
           </argument>
         </arguments>
